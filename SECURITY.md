@@ -8,7 +8,7 @@ We take security issues seriously and appreciate your time and efforts in making
 Azimuth safer through coordinated vulnerability disclosure.
 
 If you believe you have found a security vulnerability in this repository,
-please use email secalert@stackhpc.com to notify us privately.
+please use email azimuth-secalert@stackhpc.com to notify us privately.
 
 This will ensure only repository maintainers and authorized personnel can view the report.
 
