@@ -16,15 +16,15 @@ For cloud operators, Azimuth helps you:
 * Curate application catalog, with site specific optimizations
 * Resource limits, with optional max application runtime
 
-Interested? Give Azimuth a try on your OpenStack cloud!
-https://azimuth-config.readthedocs.io/en/stable/try/
+Interested?
+[Give Azimuth a try](https://azimuth-config.readthedocs.io/en/stable/try/) on your OpenStack cloud!
 
 Not got an OpenStack cloud? We are working on a standalone
 version that runs on a kubernetes cluster.
 
 ## Azimuth Office hours
 
-To be confirmed.
+To be confirmed. We hope to establish a monthly community meeting.
 
 ## Roadmap
 
@@ -71,8 +71,8 @@ as [JupyterHub](https://jupyter.org/hub) that run on [Kubernetes](https://kubern
 Services are exposed to users without consuming floating IPs or requiring SSH keys using the
 [Zenith](https://github.com/azimuth-cloud/zenith) application proxy.
 
-Here, you can see Stig Telfer (CTO) and Matt Pryor (Senior Tech Lead and Azimuth project lead) from
-[StackHPC](https://www.stackhpc.com/) presenting Azimuth at the
+Here, you can see Stig Telfer (CTO) from [StackHPC](https://www.stackhpc.com/)
+presenting Azimuth at the
 [OpenInfra Summit in Berlin in 2022](https://openinfra.dev/summit/berlin-2022):
 
 [![Azimuth - self service cloud platforms for reducing time to science](https://img.youtube.com/vi/FRbpI7ZsvMw/0.jpg)](https://www.youtube.com/watch?v=FRbpI7ZsvMw)
@@ -103,11 +103,11 @@ Key features of Azimuth include:
     * Cluster-as-a-Service (CaaS)
       * Operators provide a curated catalog of appliances.
       * Appliances are Ansible playbooks that provision and configure infrastructure.
-        * Ansible calls out to [Terraform](https://www.terraform.io/) to provision infrastructure.
-      * Uses [AWX](https://github.com/ansible/awx), the open-source version of
-        [Ansible Tower](https://docs.ansible.com/ansible-tower/), to manage Ansible playbook execution
-        and [Consul](https://www.consul.io/) to store Terraform state.
-  * Application proxy using Zenith:
+        * Ansible calls out to [OpenTofu](https://opentofu.org/) to provision infrastructure.
+      * [CaaS Operator](https://github.com/azimuth-cloud/azimuth-caas-operator) runs the ansible
+        for the appliances such as the [workstation](https://github.com/azimuth-cloud/caas-workstation) and
+        [Slurm](https://github.com/stackhpc/ansible-slurm-appliance/tree/main/environments/.caas).
+  * Application proxy using [Zenith](https://github.com/azimuth-cloud/zenith):
     * Zenith uses SSH tunnels to expose services running behind NAT or a firewall to the internet
       using operator-controlled, random domains.
       * Exposed services do not need to be directly accessible to the internet.
@@ -118,7 +118,7 @@ Key features of Azimuth include:
       * Monitoring and system dashboards
       * Platform-specific interfaces such as [Jupyter Notebooks](https://jupyter.org/) and
         [Open OnDemand](https://openondemand.org/)
-  * Simplified interface for managing basic OpenStack resources:
+  * (Deprecated) Simplified interface for managing basic OpenStack resources:
     * Automatic detection of networking, with auto-provisioning of networks and routers if required.
     * Create, update and delete machines with automatic network detection.
     * Create, delete and attach volumes.
@@ -150,3 +150,12 @@ This section shows a timeline of the significant events in the development of Az
   * **March 2022**: Support for exposing services in CaaS appliances using Zenith.
   * **June 2022**: Unified platforms interface for Kubernetes and CaaS.
   * **October 2022**: Support for Kubernetes platforms in the unified platforms interface.
+  * **January 2023**: Created [new cluster as a service](https://github.com/azimuth-cloud/azimuth-caas-operator) operator, to replace use of AWX.
+  * **March 2024**: New [schedule operator](https://github.com/azimuth-cloud/azimuth-schedule-operator) that co-ordinates reservations with OpenStack Blazar
+  * **April 2024**: Removed depency on Consul, with Zenith now using CRDs to store state
+  * **May 2024**: Explored [standalone FluxCD based](https://github.com/stackhpc/capi-helm-fluxcd-config)
+    [capi-helm-chart](https://github.com/azimuth-cloud/capi-helm-charts) K8s clusters
+  * **May 2024**: First upstream release of [OpenStack Magnum driver](https://opendev.org/openstack/magnum-capi-helm/)
+    that uses [capi-helm-charts](https://github.com/azimuth-cloud/capi-helm-charts)
+  * **February 2025**: Creation of new [Apps operator](https://github.com/azimuth-cloud/azimuth-apps-operator) using FluxCD to deploy Kubernetes based Apps
+  * **Setempber 2025**: Support merged for OIDC authentication and non-OpenStack Azimuth deployents.
