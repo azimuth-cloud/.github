@@ -2,7 +2,7 @@
 
 Azimuth is an open source cloud interface to help
 scientists transform AI and HPC infrastructure into
-something useful.
+something useful to scientists.
 
 Azimuth enables scientists to:
 
