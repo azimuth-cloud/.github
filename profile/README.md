@@ -6,7 +6,7 @@ something useful to scientists.
 
 Azimuth enables scientists to:
 
-* Create a Machine in seconds, a Cluster in minutes
+* Create a Kubernetes or Slurm Cluster in minutes
 * One click SSO into Desktop and Applications
 * Securely share Applications with external users
 * Monitoring of Performance, Utilization and Cloud Capacity
