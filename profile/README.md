@@ -26,18 +26,6 @@ version that runs on a kubernetes cluster.
 
 To be confirmed. We hope to establish a monthly community meeting.
 
-## Roadmap
-
-As of September 2025, our current draft roadmap includes:
-
-* Restoring our monthly release cadance, to ensure timely updates to all the supplied images
-* Adding the option to separate OpenStack and Azimuth authentication and authorization
-* Enabling more hybrid cloud use cases, by supporting non-OpenStack k8s clusters
-* Adding CI testing for the non-OpenStack and OIDC features
-* Enable the use of Azimuth project stroage outside of Azimuth, such as inside a shared Slurm cluster
-* Improved OpenStack resource management, leaning on tools such as
-  [OpenStack Blazar](https://docs.openstack.org/blazar/latest/) and [Waldur](https://waldur.com/)
-
 ## Architecture
 
 Azimuth consists of a [Python](https://www.python.org/) backend providing a REST API (different
